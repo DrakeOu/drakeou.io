@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/_sidebar.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/秒杀设计/秒杀专题-系统的设计（一）.md" beforeDir="false" afterPath="$PROJECT_DIR$/秒杀设计/秒杀专题-系统的设计（一）.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +26,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/code/java-/untitled/cdemo" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
@@ -60,7 +62,17 @@
       <updated>1589101165265</updated>
       <workItem from="1589101166838" duration="12512000" />
       <workItem from="1589164609286" duration="673000" />
+      <workItem from="1590032959908" duration="1423000" />
+      <workItem from="1590115305839" duration="944000" />
     </task>
+    <task id="LOCAL-00001" summary="添加秒杀专题">
+      <created>1590033149854</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590033149854</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,5 +90,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加秒杀专题" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加秒杀专题" />
   </component>
 </project>
