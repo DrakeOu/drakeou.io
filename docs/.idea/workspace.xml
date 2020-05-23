@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="">
+    <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="添加秒杀专题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/_sidebar.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/秒杀设计/秒杀专题-系统的设计（一）.md" beforeDir="false" afterPath="$PROJECT_DIR$/秒杀设计/秒杀专题-系统的设计（一）.md" afterDir="false" />
@@ -63,7 +63,7 @@
       <workItem from="1589101166838" duration="12512000" />
       <workItem from="1589164609286" duration="673000" />
       <workItem from="1590032959908" duration="1423000" />
-      <workItem from="1590115305839" duration="944000" />
+      <workItem from="1590115305839" duration="1555000" />
     </task>
     <task id="LOCAL-00001" summary="添加秒杀专题">
       <created>1590033149854</created>
