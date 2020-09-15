@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="添加秒杀专题" />
+    <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="添加秒杀专题">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +57,7 @@
       <workItem from="1590032959908" duration="1423000" />
       <workItem from="1590115305839" duration="1555000" />
       <workItem from="1599981802617" duration="308000" />
+      <workItem from="1600004285507" duration="867000" />
     </task>
     <task id="LOCAL-00001" summary="添加秒杀专题">
       <created>1590033149854</created>

@@ -12,6 +12,30 @@
 
 而状态机将整个系统的业务流程抽象成一个具有多个状态且可以相互转换的生命周期，那么业务场景就自然的和状态进行了绑定，同时由于状态的存在，对于场景的判断和事件的发生有了更加明确的原则。**事件绑定在了状态之间，而状态之间的转换被事件所描述**
 
+### SpringStateMachine的定位
+
+- Easy-to-use flat (one-level) state machine for simple use cases.
+- Hierarchical state machine structure to ease complex state configuration.
+- State machine regions to provide even more complex state configurations.
+- Usage of triggers, transitions, guards, and actions.
+- Type-safe configuration adapter.
+- State machine event listeners.
+- Spring IoC integration to associate beans with a state machine.
+
+### 什么时候改使用状态机
+
+根据`SpringStateMachine`官方文档的描述
+
+1. 当你可以将整个应用或者其部分描述成一系列状态
+2. 当你希望把复杂逻辑切分成更小可控的单元
+3. 当应用中存在异步功能而饱受并行问题困扰时
+
+下面这些情况应该毫不犹豫的尝试状态机模型：
+
+1. 频繁的使用布尔值和枚举类表示模型的状态
+2. 有很多变量仅仅是用于标注应用的生命周期
+3. 通过循环和判断来对系统要执行的任务进行检查（不断判断事件是否符合一个条件或多个条件）
+
 ### Spring StateMachine相关概念
 
 #### 状态机的定义
