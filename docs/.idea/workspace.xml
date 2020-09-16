@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="添加秒杀专题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringStateMachine/SpringStateMachine概念入门.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringStateMachine/SpringStateMachine概念入门.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +59,7 @@
       <workItem from="1590115305839" duration="1555000" />
       <workItem from="1599981802617" duration="308000" />
       <workItem from="1600004285507" duration="867000" />
+      <workItem from="1600150225419" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="添加秒杀专题">
       <created>1590033149854</created>
