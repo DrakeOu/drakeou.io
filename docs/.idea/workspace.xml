@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d54a05fb-6e48-4ee6-b85c-6d2e6507d11b" name="Default Changelist" comment="添加秒杀专题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringStateMachine/SpringStateMachine概念入门.md" beforeDir="false" afterPath="$PROJECT_DIR$/SpringStateMachine/SpringStateMachine概念入门.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../WORKSPACE/portal" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
@@ -60,6 +59,9 @@
       <workItem from="1599981802617" duration="308000" />
       <workItem from="1600004285507" duration="867000" />
       <workItem from="1600150225419" duration="56000" />
+      <workItem from="1600249740100" duration="769000" />
+      <workItem from="1600256511201" duration="599000" />
+      <workItem from="1600305457705" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="添加秒杀专题">
       <created>1590033149854</created>
@@ -89,5 +91,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加秒杀专题" />
     <option name="LAST_COMMIT_MESSAGE" value="添加秒杀专题" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600305489490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600305489490" />
   </component>
 </project>
