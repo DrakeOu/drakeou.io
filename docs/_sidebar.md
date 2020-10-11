@@ -13,7 +13,7 @@
     * [一次MVC源码历险](/源码探索/一次SpringMVC源码探险)
 * **MySQL**
   * [MySQL之行格式、页结构](/MySQL/MySQL之行格式、页结构)
-    * [MySQL索引使用细节](/MySQL/MySQL索引使用细节)
+  * [MySQL索引使用细节](/MySQL/MySQL索引使用细节)
 * **netty**
   * [从定义协议开始](/netty/从定义协议开始)
   * [Pipeline与channelHandler](/netty/Pipeline与channelHandler)
