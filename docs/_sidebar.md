@@ -15,8 +15,8 @@
   * [MySQL之行格式、页结构](/MySQL/MySQL之行格式、页结构)
   * [MySQL索引使用细节](/MySQL/MySQL索引使用细节)
 * **Netty实现IM聊天框架**
-  * [从定义协议开始](/netty/从定义协议开始)
-  * [Pipeline与channelHandler](/netty/Pipeline与channelHandler)
+  * [从定义协议开始](/Netty实现IM聊天框架/从定义协议开始)
+  * [Pipeline与channelHandler](/Netty实现IM聊天框架/Pipeline与channelHandler)
 * **SpringStateMachine**
   * [概念入门](/SpringStateMachine/SpringStateMachine概念入门)
 * **Redis**
