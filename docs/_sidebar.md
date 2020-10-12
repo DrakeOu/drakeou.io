@@ -17,6 +17,7 @@
 * **Netty实现IM聊天框架**
   * [从定义协议开始](/Netty实现IM聊天框架/从定义协议开始)
   * [Pipeline与channelHandler](/Netty实现IM聊天框架/Pipeline与channelHandler)
+  * [心跳与空闲检测](/Netty实现IM聊天框架/心跳与空闲检测)
 * **SpringStateMachine**
   * [概念入门](/SpringStateMachine/SpringStateMachine概念入门)
 * **Redis**
