@@ -5,6 +5,7 @@
 
     * [JMM&Voltaile](/Java进阶/JMMandVolatile)
     * [JVM多图速览](/Java进阶/JVM多图速览)
+    * [JVM类的生命周期](/Java进阶/类的生命周期)
     * [关于JMM的思考](/Java进阶/关于JMM的思考)
     * [动态代理学习](/Java进阶/动态代理学习)
     * [NIO和IO多路复用](/Java进阶/NIO和IO多路复用)
