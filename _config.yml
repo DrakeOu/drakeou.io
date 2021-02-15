@@ -106,3 +106,5 @@ deploy:
   type: 'git'
   repository: git@github.com:DrakeOu/drakeou.io.git
   branch: master
+  name: DrakeOu
+  email: 279535610@qq.com
