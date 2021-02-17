@@ -10,13 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="add ignore">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2021/02/15/hello-world/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2021/02/15/hello-world/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="add ignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +18,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_COMMON_BRANCH" value="master" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.deploy_git" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -65,6 +59,7 @@
       <workItem from="1613377946403" duration="3456000" />
       <workItem from="1613457000530" duration="24000" />
       <workItem from="1613546755872" duration="17000" />
+      <workItem from="1613547292757" duration="344000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -101,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613379729712</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add ignore">
+      <created>1613547364720</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613547364720</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
