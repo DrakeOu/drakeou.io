@@ -28,6 +28,7 @@
     * [Redis的键过期管理](/Redis/Redis的键过期管理)
     * [Redis复制功能](/Redis/Redis复制功能)
 * **并发编程**
+    * [慢定时任务的多线程优化](/并发编程/慢定时任务的多线程优化)
     * [AQS原理简析](/并发编程/AQS原理)
     * [ConcurrentHashMap实现解析](/并发编程/ConcurrentHashMap实现解析)
     * [HashMap内部实现](/并发编程/HashMap内部实现)
