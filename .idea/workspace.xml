@@ -10,7 +10,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="add ignore" />
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加多线程优化定时任务">
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/FastLeaderElection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/QuorumPeer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/fast-class.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/fast-doc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/mainLoop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/startLeaderElection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/tcp-tricky.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Zookeeper/Zookeeper-ZAB协议与Leader选举.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Zookeeper/Zookeeper-ZAB协议与Leader选举.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +70,9 @@
       <workItem from="1613457000530" duration="24000" />
       <workItem from="1613546755872" duration="17000" />
       <workItem from="1613547292757" duration="344000" />
+      <workItem from="1613565564321" duration="593000" />
+      <workItem from="1613727899880" duration="467000" />
+      <workItem from="1613828325315" duration="349000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -103,7 +116,35 @@
       <option name="project" value="LOCAL" />
       <updated>1613547364720</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ZAB proxy and leader election">
+      <created>1613565615368</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1613565615368</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add sidebar">
+      <created>1613565757623</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1613565757623</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加多线程优化定时任务">
+      <created>1613728020632</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1613728020633</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加多线程优化定时任务">
+      <created>1613728226909</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1613728226909</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,9 +166,16 @@
     <MESSAGE value="init" />
     <MESSAGE value="prepare switch to hexo" />
     <MESSAGE value="add ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ignore" />
+    <MESSAGE value="ZAB proxy and leader election" />
+    <MESSAGE value="add sidebar" />
+    <MESSAGE value="添加多线程优化定时任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加多线程优化定时任务" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog" timestamp="1613566034309">
+      <screen x="0" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1613566034309" />
     <state x="740" y="-795" key="FileChooserDialogImpl" timestamp="1613457024110">
       <screen x="0" y="-1080" width="1920" height="1080" />
     </state>

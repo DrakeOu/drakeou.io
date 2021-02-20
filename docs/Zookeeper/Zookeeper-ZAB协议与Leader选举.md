@@ -64,4 +64,76 @@ Leader在进行事务处理时会给每个事务分配一个ZXID
 
 ### Leader选举的源码实现
 
+Leader选举的过程实际就是ZAB协议中**崩溃恢复**的对应实现，没有比直接浏览源码更能直接体会协议设计以及如何运行的方法了。
+
+#### 前情梳理
+
+浏览源码前首先需要对Leader选举的过程有个抽象认知，大致梳理我们可以得到这样一些问题：
+
+1. 什么时候需要进行Leader选举？
+
+   答：服务器启动加入集群时；机器与当前的Leader失去联系时
+
+2. 选举算法是什么样的？
+
+   答：广播自己选票，统计归票，投票变更，半数检查，更改服务器状态
+
+3. 服务器间选举时的网络IO实现？
+
+   答：与**消息广播**阶段时的连接对象`ServerCnxn`和`ClientCnxn`不同（这两种底层均是Netty提供支持使用NIO实现），**崩溃恢复**阶段的IO并不是NIO实现，而是Socket实现。
+
+4. 选举的代码运行过程？选票的数据类型，消息管理，选票管理？
+
+#### 源码分析
+
+##### 进入Leader选举
+
+首先找到`QuorumPeer`这个类，根据其描述，可以发现：
+
+![image-20210220195650815](../static/zookeeper/QuorumPeer.png)
+
+> 该类是维护本机器和其他集群机器之间连接的线程实现，同时也是**过半协议**的实现
+
+可以认为该类维护且持续监测集群状态，下面代码中的主循环也证明了这点：
+
+![image-20210220200145731](../static/zookeeper/mainLoop.png)
+
+继续找到开始Leader选举的调用方法`startLeaderElection`，同时发现该方法的调用仅在服务器开启和当前为`LOOKING`状态时会进行选举。
+
+![image-20210220195615954](../static/zookeeper/startLeaderElection.png)
+
+同时观察这个方法可以发现，开始进行投票时，以myid，LastZXID以及epoch作为参数初始化了投票信息，这三个参数分别表示：
+
+1. myid：服务器ID，服务器的唯一标识
+2. LastZXID：ZXID为ZK中事务的ID，这里表示本机处理提交的最后一个事务ID
+3. epoch：区分leader代数的值，这里用于相互投票时的验证功能
+
+##### 选票发送与接收
+
+![image-20210220204005653](../static/zookeeper/fast-doc.png)
+
+选票的发送与收集都聚焦的`FastLeaderElection`这个类中，关于选举算法ZK曾经提供了多种实现，但是现在都以`FastLeaderElection`为准。可以看到描述中表明了选举过程的通信是基于TCP的，这里使用的是Socket的实现方式，同时`QuorumCxnManager`提供了对其他`Peer`的连接支持。
+
+同时对结构分析：
+
+![image-20210220204354668](../static/zookeeper/fast-class.png)
+
+- ToSend定义了向他人传递消息的结构类型
+- Notification用于接收其他Peer的消息类型
+- Messenger中维护了两个队列，以及实现了Sender和Recevier两个线程，分别用于发送消息的缓存以及接收消息
+
+`Messenger`中的队列均为`LinkedBlockingQueue`实现，同时依赖了`QuorumCnxManager`进行Socket通信，所以消息的发送和接收均会通过**内存中的队列进行缓存**，同时两个工作线程会不断从队列中取出进行处理，并依赖**Socket**进行服务器间通信。
+
+> 而我们知道TCP是全双工的协议，也就是两个服务器仅需要一个连接就可以进行双向通信，这里使用了一种取巧的实现方式
+
+对于任意一个`Peer`而言，它会对其他服务器尝试进行SSL连接，并将自身的服务器ID和对方的ID进行比较，较小的一方将会放弃自己创建的连接，这样集群中两两之间可以确保仅有一个TCP连接用于通信
+
+![image-20210220211407578](../static/zookeeper/tcp-tricky.png)
+
+一个图来表示他们之间的关系：
+
+![FastLeaderElection](../static/Zookeeper/FastLeaderElection.png)
+
+##### 选举算法实现
+
 ---To be continue
