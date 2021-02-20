@@ -132,7 +132,7 @@ Leader选举的过程实际就是ZAB协议中**崩溃恢复**的对应实现，�
 
 一个图来表示他们之间的关系：
 
-![FastLeaderElection](../static/Zookeeper/FastLeaderElection.png)
+![FastLeaderElection](../static/zookeeper/FastLeaderElection.png)
 
 ##### 选举算法实现
 
