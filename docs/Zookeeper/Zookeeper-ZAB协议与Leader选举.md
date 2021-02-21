@@ -136,4 +136,27 @@ Leader选举的过程实际就是ZAB协议中**崩溃恢复**的对应实现，�
 
 ##### 选举算法实现
 
----To be continue
+1. 自增选举轮次，`logicalclock`是一个`AtomicLong`用于表示当前选举轮次
+2. 初始化选票，同时发送选票（updateProposal()初始化，sendNotifications()将选票发送给其他`Peer`）
+
+![自增-投票](../static/zookeeper/incre-sendNotify.png)
+
+3. 尝试接收外部选票，外部选票储存在`recvqueue`中，这里会尝试poll出一个，如果没有可能考虑消息没有成功发送到会再次进行发送或者建立连接
+
+![重试](../static/zookeeper/retry.png)
+
+4. 下面进行接收选票的处理：
+
+   1. 判断选举轮次（`logicalclock`），如果自己是落后方，那么会清除当前归档的选票集合`recvSet`，并更新自己的选票重新发送
+
+   2. 如果对方是落后方，则忽略选票
+
+   3. （这个条件已经默认双方轮次一致，可以直接比较选票）如果对方选票胜利，则按对方更新同时发送自己的选票变更
+
+      > ![选票pk](../static/zookeeper/vote-pk.png)
+      >
+      > 选票比较的方式从epoch，zxid，sid依次比较
+
+![选票判断及处理](../static/zookeeper/vote-validate.png)
+
+5. 最后选票被归档到`recvSet`中，并进行过半检查，各自更新服务器状态
