@@ -2,7 +2,7 @@
 * **Java基础**
     * [Java参数传递类型](/Java基础/Java参数传递类型)
 * **Java进阶**
-
+    * [类文件结构](/Java进阶/类文件结构)
     * [JMM&Voltaile](/Java进阶/JMMandVolatile)
     * [JVM多图速览](/Java进阶/JVM多图速览)
     * [JVM类的生命周期](/Java进阶/类的生命周期)
@@ -36,7 +36,7 @@
     * [JUC-解决生产者消费者问题](/并发编程/JUC-解决生产者消费者问题)
     * [Synchronized+Spring事务==线程不安全？？](/并发编程/Synchronized+Spring事务==线程不安全？？)
 * **网络协议**
-
+    * [HTTP长短连接](/网络协议/HTTP长连接短链接)
     * [TCPIP系列知识](/网络协议/TCPIP系列知识)
 * **设计模式**
 

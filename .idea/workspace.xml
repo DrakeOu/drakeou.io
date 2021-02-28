@@ -11,12 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加Leader选举部分">
-      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/incre-sendNotify.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/retry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/vote-pk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/static/zookeeper/vote-validate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/网络协议/HTTP长连接短链接.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Zookeeper/Zookeeper-ZAB协议与Leader选举.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Zookeeper/Zookeeper-ZAB协议与Leader选举.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/static/zookeeper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../guide-rpc-framework" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -77,7 +73,10 @@
       <workItem from="1613828325315" duration="410000" />
       <workItem from="1613828878287" duration="71000" />
       <workItem from="1613874070805" duration="24000" />
-      <workItem from="1613878012631" duration="430000" />
+      <workItem from="1613878012631" duration="467000" />
+      <workItem from="1614220956597" duration="237000" />
+      <workItem from="1614235876730" duration="1301000" />
+      <workItem from="1614397316598" duration="78000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -163,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613828909820</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="添加Leader选举部分">
+      <created>1613878455207</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1613878455207</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,15 +198,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="添加Leader选举部分" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
+      <screen x="0" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1614235919677" />
     <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog" timestamp="1613566034309">
       <screen x="0" y="-1080" width="1920" height="1080" />
     </state>
     <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1613566034309" />
-    <state x="740" y="-795" key="FileChooserDialogImpl" timestamp="1613874087292">
+    <state x="740" y="-795" key="FileChooserDialogImpl" timestamp="1614221191548">
       <screen x="0" y="-1080" width="1920" height="1080" />
     </state>
     <state x="740" y="-805" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1606100984328" />
-    <state x="740" y="-795" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1613874087292" />
+    <state x="740" y="-795" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1614221191548" />
     <state x="592" y="228" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1613358686825" />
   </component>
 </project>
