@@ -2,13 +2,15 @@
 * **Java基础**
     * [Java参数传递类型](/Java基础/Java参数传递类型)
 * **Java进阶**
-    * [类文件结构](/Java进阶/类文件结构)
     * [JMM&Voltaile](/Java进阶/JMMandVolatile)
-    * [JVM多图速览](/Java进阶/JVM多图速览)
-    * [JVM类的生命周期](/Java进阶/类的生命周期)
     * [关于JMM的思考](/Java进阶/关于JMM的思考)
     * [动态代理学习](/Java进阶/动态代理学习)
     * [NIO和IO多路复用](/Java进阶/NIO和IO多路复用)
+* **JVM**
+    * [JVM多图速览](/JVM/JVM多图速览)    
+    * [JVM类的生命周期](/JVM/类的生命周期)
+    * [类文件结构](/JVM/类文件结构)
+    * [虚拟机类加载机制](/JVM/虚拟机类加载机制)
 * **源码探索**
     * [一次MVC源码历险](/源码探索/一次SpringMVC源码探险)
 * **Zookeeper**

@@ -10,8 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加Leader选举部分">
-      <change afterPath="$PROJECT_DIR$/docs/网络协议/HTTP长连接短链接.md" afterDir="false" />
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加类文件结构">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +42,12 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../guide-rpc-framework" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/static" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PLAYGROUND\drakeou.io\docs\static" />
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static\zookeeper" />
     </key>
   </component>
@@ -77,6 +77,8 @@
       <workItem from="1614220956597" duration="237000" />
       <workItem from="1614235876730" duration="1301000" />
       <workItem from="1614397316598" duration="78000" />
+      <workItem from="1614523156160" duration="621000" />
+      <workItem from="1614571879447" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -169,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613878455207</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="添加类文件结构">
+      <created>1614523398337</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614523398337</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +204,8 @@
     <MESSAGE value="add sidebar" />
     <MESSAGE value="添加多线程优化定时任务" />
     <MESSAGE value="添加Leader选举部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加Leader选举部分" />
+    <MESSAGE value="添加类文件结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加类文件结构" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
