@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加类文件结构">
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加类加载机制">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +46,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PLAYGROUND\drakeou.io\docs\JVM" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static" />
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static\zookeeper" />
@@ -79,6 +82,8 @@
       <workItem from="1614397316598" duration="78000" />
       <workItem from="1614523156160" duration="621000" />
       <workItem from="1614571879447" duration="69000" />
+      <workItem from="1614586161232" duration="253000" />
+      <workItem from="1614668222904" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -178,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614523398337</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加类加载机制">
+      <created>1614586395870</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614586395871</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +217,8 @@
     <MESSAGE value="添加多线程优化定时任务" />
     <MESSAGE value="添加Leader选举部分" />
     <MESSAGE value="添加类文件结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加类文件结构" />
+    <MESSAGE value="添加类加载机制" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加类加载机制" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
