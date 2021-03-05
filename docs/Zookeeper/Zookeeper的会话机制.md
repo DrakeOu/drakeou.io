@@ -59,4 +59,69 @@
 
 #### 客户端连接对象ClientCnxn
 
--- To be continue
+在Watcher机制和ZAB协议与Leader选举中，都大量提到了这个对象。其实不用特别强调也能知道这个对象维护了客户端和服务器的网络连接。
+
+其中包含了：
+
+- Packet 内部定义的协议层封装类，作为请求和响应的载体
+- ClientCnxnSocket 底层的Socket通信层
+- SendThread 内部核心的IO调度线程，管理网络IO操作
+- EventThread 处理客户端事件，从队列中取出待处理事件处理
+
+### 会话创建的服务器视角
+
+服务端的Session对象包含如下关键字段：
+
+1. sessionID: 全局唯一的会话id
+2. TimeOut：会话超时时间，客户端创建连接时会提供一个sessionTimeOut配置超时时间，服务端再根据自己的设置决定最终会话的超时时间
+3. TickTime: 下次会话超时时间，这个涉及到会话管理的分桶策略
+4. isClosing: 标记会话是否关闭
+
+那么对于上面的字段很容易产生一个问题
+
+> 客户端和服务端是点对点连接的，但集群内生成的sessionID如何保存集群内唯一？
+
+可以看到如下SessionTracker中的代码
+
+![init-sessionId](../static/zookeeper/init-sessionid.png)
+
+先以时间戳作为操作的基础，左移24位再右移8位，相当于空出了前面8位及后面16位。同时及机器sid最为前面的8位填充。
+
+SID+时间戳，而SID可以确保不同服务器的sessionID不同（因为集群配置时sid不可能相同），而后面以时间戳作为基数可以确保同一机器生成的sessionID各自不同。
+
+同时上面使用的是无符号右移，是因为单纯以时间做id基数时在2022年4月8日时会得到一个负数，所以使用无符号右移取代了右移。
+
+> SessionTracker是什么？
+
+`SessionTracker`是Zookeeper服务端的会话管理器，负责会话的创建，管理和清理工作。其中有三个对象以不同的维度保存了会话
+
+- sessionsById 一个hashMap，sessionId对应会话
+- sessionWithTimeout 一个ConcurrentHashMap，键对应sessionId，值为其超时时间
+- sessionSets 一个HashMap根据下次的会话超时时间归档会话，值为sessionSet
+
+关于`sessionSets`，最新的zk源码中已经替换成了一个队列的实现，如下图：
+
+![expiryQueue](../static/zookeeper/expiryQueue.png)
+
+但其内部仍然是一个`ConcurrentHashMap`在维护（expireTime->session）的map
+
+![bucket](../static/zookeeper/session-bucket.png)
+
+#### 会话管理的分桶策略
+
+ZK中的会话管理并不是简单的计算完会话超时时间后就不断轮询检查会话超时，那样性能显然太差，也容易产生因为会话集中到一段时间过期而导致的阻塞问题。
+
+这里使用了一种分桶策略，大致是如下的过程：
+
+1. 对于每个会话会根据`currentTime`+`SessionTimeout`计算出一个实际的超时时间
+2. 然后根据`ExpirationTime` = `(ExpirationTime/ExpirationInterval + 1) * ExpirationInterval`计算得到会话所属的区间。这一步实际上是将会话按预设的检查间隔分到对应间隔的桶中。
+3. 上述的`expiryMap`中的key就是计算得到以`ExpirationInterval`为步长的时间戳，每隔这个间隔时间就会通过`ExpiryQueue.poll()`尝试取出一个`Set<Session>`进行检查。
+4. 定时的心跳以及来自会话的操作都会激活该会话，激活会话时会产生会话迁移，也就是将会话迁移到后面的桶
+
+那么这样分桶操作的好处是显而易见的
+
+- 对所有会话的检查工作平摊到了不同的桶中，不需要同一时间检查全部会话
+- 检查会话时的会话迁移可以看作是对会话的清理，因为剩下无法迁移的会话就需要清理，连续检查带来的频繁清理的工作变成了一段时间进行的一次批量清理
+
+
+
