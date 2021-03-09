@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加zk会话机制">
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="修改NIO和多路复用内容">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,12 +46,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PLAYGROUND\drakeou.io\docs\JVM" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PLAYGROUND\drakeou.io\docs\static\netty" />
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static\zookeeper" />
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PLAYGROUND\drakeou.io\docs\Netty" />
+      <recent name="D:\PLAYGROUND\drakeou.io\docs\JVM" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -88,6 +90,7 @@
       <workItem from="1614821232917" duration="5000" />
       <workItem from="1614928012524" duration="239000" />
       <workItem from="1614928435943" duration="26000" />
+      <workItem from="1615270735174" duration="731000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -208,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614928180020</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="修改NIO和多路复用内容">
+      <created>1615270789592</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1615270789592</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,21 +247,21 @@
     <MESSAGE value="添加类文件结构" />
     <MESSAGE value="添加类加载机制" />
     <MESSAGE value="添加zk会话机制" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加zk会话机制" />
+    <MESSAGE value="修改NIO和多路复用内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改NIO和多路复用内容" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
       <screen x="0" y="-1080" width="1920" height="1080" />
     </state>
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1614235919677" />
-    <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog" timestamp="1613566034309">
+    <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog" timestamp="1615279879775">
       <screen x="0" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1613566034309" />
+    <state x="92" y="-988" width="1736" height="896" key="DiffContextDialog/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1615279879775" />
     <state x="740" y="-795" key="FileChooserDialogImpl" timestamp="1614221191548">
       <screen x="0" y="-1080" width="1920" height="1080" />
     </state>
-    <state x="740" y="-805" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1606100984328" />
     <state x="740" y="-795" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1614221191548" />
     <state x="592" y="228" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1613358686825" />
   </component>

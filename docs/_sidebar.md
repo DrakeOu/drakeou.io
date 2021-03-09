@@ -17,6 +17,8 @@
     * [Watcher机制](/Zookeeper/Zookeeper-Watcher机制) 
     * [ZAB协议与Leader选举](/Zookeeper/Zookeeper-ZAB协议与Leader选举)
     * [会话机制](/Zookeeper/Zookeeper的会话机制)
+* **Netty**
+    * [Reactor模式](/Netty/Reactor线程模型)    
 * **MySQL**
   * [MySQL之行格式、页结构](/MySQL/MySQL之行格式、页结构)
   * [MySQL索引使用细节](/MySQL/MySQL索引使用细节)
