@@ -46,12 +46,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PLAYGROUND\drakeou.io\docs\JVM" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static\zookeeper" />
       <recent name="D:\PLAYGROUND\drakeou.io\docs\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PLAYGROUND\drakeou.io\docs\JVM" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -86,6 +86,8 @@
       <workItem from="1614668222904" duration="12000" />
       <workItem from="1614785313436" duration="682000" />
       <workItem from="1614821232917" duration="5000" />
+      <workItem from="1614928012524" duration="239000" />
+      <workItem from="1614928435943" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -199,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614785592957</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="添加zk会话机制">
+      <created>1614928180020</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614928180020</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
