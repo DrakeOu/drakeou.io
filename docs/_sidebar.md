@@ -3,6 +3,7 @@
     * [Java参数传递类型](/Java基础/Java参数传递类型)
 * **Java进阶**
     * [关于final关键字的问题](/Java进阶/final关键字)
+    * [Java中的多态](/Java进阶/Java中的多态)
     * [JMM&Voltaile](/Java进阶/JMMandVolatile)
     * [关于JMM的思考](/Java进阶/关于JMM的思考)
     * [动态代理学习](/Java进阶/动态代理学习)
