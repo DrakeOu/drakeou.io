@@ -10,9 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加final 关键字内容">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加多态内容" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +95,7 @@
       <workItem from="1615690096282" duration="6000" />
       <workItem from="1616229487796" duration="330000" />
       <workItem from="1616307566680" duration="33000" />
+      <workItem from="1616414630329" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -252,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616229778930</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="添加多态内容">
+      <created>1616414683262</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1616414683262</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +291,8 @@
     <MESSAGE value="添加reactor模式" />
     <MESSAGE value="更新reactor模式" />
     <MESSAGE value="添加final 关键字内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加final 关键字内容" />
+    <MESSAGE value="添加多态内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加多态内容" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
