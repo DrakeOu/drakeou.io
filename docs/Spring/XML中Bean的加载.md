@@ -4,7 +4,7 @@
 
 虽然使用XML注入的方式几乎已经很少使用了，但这仍然是最初Bean加载的方式。
 
-## Bean的加载流程--代码1
+## Bean的加载流程--XML的解析
 
 ```java
 public void testSimpleLoad(){
@@ -93,8 +93,200 @@ private final String[] aliases; //bean的别名
 3. 而对XML文件将进行格式验证，并最终获得Document对象
 4. bean的注册过程实际加载的是类对象，而并没有立即实例化。考虑懒加载，但这个类又必然实例化，所以先将类加载进来。
 
-## Bean的加载流程--代码2
+## Bean的加载流程--Bean的加载
 
-接下来对标签的解析进行更细致的分析
+上面全部是分析`BeanFactory`的获取过程，那么在
+
+```java
+MyTestBean bean = (MyTestBean) bf.getBean("myTestBean");
+```
+
+的过程中，发生了什么？
+
+### 整体流程
+
+首先，`getBean`方法将调用在抽象类`AbstractBeanFactory`中实现的`doGetBean`方法获取Bean。这段代码相当之长，逻辑十分复杂。
+
+1. 转换对应的beanName
+
+```java
+String beanName = transformedBeanName(name);
+```
+
+`name`是传入的名称，但这个名称可能是别名也可能是`FactoryBean`的名称。所以需要转换成真正需要创建的beanName。
+
+2. 从单例缓存中尝试加载
+
+```java
+// Eagerly check singleton cache for manually registered singletons.
+Object sharedInstance = getSingleton(beanName);
+```
+
+上述方法将最终指向`DefaultSingletonBeanRegistray.getSingleton()`，也可以看到`AbstractBeanFactory`继承了`DefaultSingletonBeanRegistry`。
+
+![单例缓存加载](../static/spring/单例缓存加载.png)
+
+3. bean的实例化
+
+如果从缓存中得到了bean的原始状态，那么将对它进行实例化。
+
+```java
+if (sharedInstance != null && args == null) {
+			if (logger.isTraceEnabled()) {
+				if (isSingletonCurrentlyInCreation(beanName)) {
+					logger.trace("Returning eagerly cached instance of singleton bean '" + beanName +
+							"' that is not fully initialized yet - a consequence of a circular reference");
+				}
+				else {
+					logger.trace("Returning cached instance of singleton bean '" + beanName + "'");
+				}
+			}
+			beanInstance = getObjectForBeanInstance(sharedInstance, name, beanName, null);
+		}
+```
+
+4. 原型模式的依赖检查
+
+如果当前是原型模式下的循环依赖，则会抛出异常。Spring仅会处理单例中的循环依赖。
+
+5. 检测`parentBeanFactory`
+6. 将`GernerciBeanDefinition`转化成`RootBeanDefinition`
+7. 寻找依赖，并递归加载。
+
+```java
+// Guarantee initialization of beans that the current bean depends on.
+				String[] dependsOn = mbd.getDependsOn();
+				if (dependsOn != null) {
+					for (String dep : dependsOn) {
+						if (isDependent(beanName, dep)) {
+							throw new BeanCreationException(mbd.getResourceDescription(), beanName,
+									"Circular depends-on relationship between '" + beanName + "' and '" + dep + "'");
+						}
+						registerDependentBean(dep, beanName);
+						try {
+							getBean(dep); //这行代码最后会回到对deGetBean()的方法中
+						}
+						catch (NoSuchBeanDefinitionException ex) {
+							throw new BeanCreationException(mbd.getResourceDescription(), beanName,
+									"'" + beanName + "' depends on missing bean '" + dep + "'", ex);
+						}
+					}
+				}
+```
+
+8. 对不同scope的bean进行创建
+
+9. 类型转化，创建之后的`beanInstance`是个`Object`，需要转换成最终需要的类型。
+
+   
+
+### 有缓存的流程
+
+其中在这一长串代码中，下面这行代码重复了四次，且均为`beanInstance`赋值
+
+```java
+beanInstance = getObjectForBeanInstance(sharedInstance, name, beanName, null);
+```
+
+这个方法传入4个参数
+
+```java
+protected Object getObjectForBeanInstance(
+			Object beanInstance, String name, String beanName, @Nullable RootBeanDefinition mbd) 
+```
+
+而这个方法中将主要处理
+
+1. 是否是`FactoryBean`，如果以'&'为前缀但不是则抛出异常
+2. 那么`beanInstance`只可能是`bean`或`FactoryBean`
+3. 是`bean`则直接返回
+4. 否则使用下面的代码进行创建
+
+```java
+object = getObjectFromFactoryBean(factory, beanName, !synthetic);
+```
+
+而这段代码最终将通过`FactoryBeanRegistrySupport.getObjectFromFactoryBean()`->`doGetObjectFromFactoryBean()`。最后将调用`FactoryBean`的`getObject()`方法创建实例。
+
+代码如下
+
+```java
+protected Object getObjectFromFactoryBean(FactoryBean<?> factory, String beanName, boolean shouldPostProcess) {
+		if (factory.isSingleton() && containsSingleton(beanName)) {
+			synchronized (getSingletonMutex()) {
+				Object object = this.factoryBeanObjectCache.get(beanName);
+				if (object == null) {
+					object = doGetObjectFromFactoryBean(factory, beanName);
+					// Only post-process and store if not put there already during getObject() call above
+					// (e.g. because of circular reference processing triggered by custom getBean calls)
+					Object alreadyThere = this.factoryBeanObjectCache.get(beanName);
+					if (alreadyThere != null) {
+						object = alreadyThere;
+					}
+					else {
+						if (shouldPostProcess) {
+							if (isSingletonCurrentlyInCreation(beanName)) {
+								// Temporarily return non-post-processed object, not storing it yet..
+								return object;
+							}
+                            //这步将此时的创建过程，保持状态到currentInCreations中
+							beforeSingletonCreation(beanName);
+							try {
+								object = postProcessObjectFromFactoryBean(object, beanName);
+							}
+							catch (Throwable ex) {
+								throw new BeanCreationException(beanName,
+										"Post-processing of FactoryBean's singleton object failed", ex);
+							}
+							finally {
+								afterSingletonCreation(beanName);
+							}
+						}
+						if (containsSingleton(beanName)) {
+							this.factoryBeanObjectCache.put(beanName, object);
+						}
+					}
+				}
+				return object;
+			}
+		}
+		else {
+			Object object = doGetObjectFromFactoryBean(factory, beanName);
+			if (shouldPostProcess) {
+				try {
+					object = postProcessObjectFromFactoryBean(object, beanName);
+				}
+				catch (Throwable ex) {
+					throw new BeanCreationException(beanName, "Post-processing of FactoryBean's object failed", ex);
+				}
+			}
+			return object;
+		}
+	}
+```
+
+### 无缓存的流程
+
+那么如果在`getSingleton()`中没有获取到缓存，则会对`ParentBeanFactory`做判断，且对依赖做检测并递归实例化。（上述流程）
+
+最后会到`createBean`方法中真正的创建`Bean`
+
+那么`AbstractBeanFactory.createBean()`抽象方法，仅有唯一的实现`AbstractAutuwireCapableBeanFactory.createBean()`
+
+主要做了如下几件事：
+
+1. `resolveBeanClass()`确保bean所需的类被正确的加载
+2. `prepareMethodOverrides()`准备lookup-method和replace-method
+3. `resolveBeforeInstantiation()`对有增强需求的bean返回其代理类取代bean
+4. `doCreateBean()`直接对bean进行反射实例化
+
+可以发现仍然有很多实例化前的操作。而实现代理类又涉及到AOP的实现过程，所以这里不做展开，会在另外的篇章进行总结。
+
+#### doCreateBean
 
 --To be continue
+
+### 总结
+
+--To be continue
+
