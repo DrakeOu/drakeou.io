@@ -27,6 +27,7 @@
   * [MySQL索引使用细节](/MySQL/MySQL索引使用细节)
 * **Spring**
   * [XML中Bean的加载](/Spring/XML中Bean的加载)  
+  * [循环依赖的解决](/Spring/循环依赖的解决)
 * **Netty实现IM聊天框架**
   * [从定义协议开始](/Netty实现IM聊天框架/从定义协议开始)
   * [Pipeline与channelHandler](/Netty实现IM聊天框架/Pipeline与channelHandler)
