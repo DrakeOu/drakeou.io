@@ -10,7 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加spring xmlbean加载内容" />
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加spring xmlbean加载内容">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +103,8 @@
       <workItem from="1616585927970" duration="367000" />
       <workItem from="1616661081979" duration="829000" />
       <workItem from="1616911577024" duration="10000" />
+      <workItem from="1616935551914" duration="661000" />
+      <workItem from="1617004028657" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -277,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616661866009</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="添加spring xmlbean加载内容">
+      <created>1616935588639</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1616935588639</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,5 +340,9 @@
     </state>
     <state x="740" y="-795" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1614221191548" />
     <state x="592" y="228" key="FileChooserDialogImpl/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1613358686825" />
+    <state x="762" y="-630" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616935580288">
+      <screen x="0" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="762" y="-630" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/0.-1080.1920.1080@0.-1080.1920.1080" timestamp="1616935580288" />
   </component>
 </project>

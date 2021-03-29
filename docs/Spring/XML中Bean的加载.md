@@ -284,9 +284,95 @@ protected Object getObjectFromFactoryBean(FactoryBean<?> factory, String beanNam
 
 #### doCreateBean
 
---To be continue
+这个方法将进行bean的创建工作，以及循环依赖的处理和验证。
+
+首先会进行缓存的清除，以及`BeanDefinition`到`BeanWrapper`的转换工作
+
+```java
+// Instantiate the bean.
+		BeanWrapper instanceWrapper = null;
+		if (mbd.isSingleton()) {
+			instanceWrapper = this.factoryBeanInstanceCache.remove(beanName);
+		}
+		if (instanceWrapper == null) {
+			instanceWrapper = createBeanInstance(beanName, mbd, args);
+		}
+```
+
+`BeanWrapper`是`Bean`在未初始化前**低级对象**。主要将用在这层逻辑中。
+
+得到`BeanWrapper`的过程就是**实例化**的过程。
+
+简单可以总结成下面几个步骤：
+
+1. 提供了`factory-method`则按其实例化
+2. 有带有参数的构造器（可能有多个），则会根据构造参数和构造器匹配一个实例化方法。（反射 or Cglib）
+3. 没有带参数的构造器，按默认构造器初始化。（反射）
+
+
+
+然后是`MergedBeanDefinitionPostProcessor`的应用；
+
+接下来是对循环依赖的处理，填充属性，执行初始化方法；
+
+之后会进行循环依赖的检查，注册bean的销毁方法，最后返回。
+
+> 注入属性，及执行初始化方法
+
+```java
+// Initialize the bean instance.
+		Object exposedObject = bean;
+		try {
+			populateBean(beanName, mbd, instanceWrapper);
+			exposedObject = initializeBean(beanName, exposedObject, mbd);
+		}
+		catch (Throwable ex) {
+			if (ex instanceof BeanCreationException && beanName.equals(((BeanCreationException) ex).getBeanName())) {
+				throw (BeanCreationException) ex;
+			}
+			else {
+				throw new BeanCreationException(
+						mbd.getResourceDescription(), beanName, "Initialization of bean failed", ex);
+			}
+		}
+```
+
+##### 实例的创建
+
+也就是`AbstractAutowireCapableBeanFactory.createBeanInstance()`方法。
+
+其实实例创建的适合主要考虑两件事，一是是否有带参数的构造方法，二是构造方法的参数解析。
+
+
+
+##### 属性注入
+
+1. `InstantiationAwareBeanPostProcessor.postProcessAfterInstantiation()`的调用
+2. `byName` or `byType`进行依赖`bean`的注入，这里将递归创建`bean`
+3. 将准备好的属性`PropertyValues`注入到`BeanWrapper`中
 
 ### 总结
 
---To be continue
+bean加载的流程可以大致如下：
+
+1. 单例对象从三级缓存中获取
+   1. 如果有则对其实例化，类型转换之后返回
+   2. 如果没有则执行创建流程
+      1. 对`BeanDefinition`的获取，也就是利用**解析流程**得到的结果
+      2. 缓存中标记成`alreadyCreated`
+      3. 对依赖进行获取
+      4. 调用`createBean`创建实例
+         1. 区分是否有代理需求：
+            1. 有，则通过Cglib实例化代理对象并最终返回
+            2. 无，则在`doCreateBean`中创建
+               1. 实例化
+                  1. 区分是否有带参数的构造器，有则进行匹配并根据是否有方法注入选择Cglib或者反射创建
+                  2. 无，按默认的构造器进行反射创建
+               2. 填充属性
+                  1. 区分`byType`和`byName`，将进行依赖bean的递归
+               3. 执行提供的初始化方法
+
+可以发现一个bean的创建流程及其复杂，上述的过程还不包括**循环依赖**和**AOP**的实现过程。
+
+观察bean的加载可以发现Spring倾向将代码进行层层封装，每层仅控制部分逻辑。而这个加载的过程其实可以主要区分成，实例化，注入属性，以及初始化和构建代理这么几个过程。
 
