@@ -10,10 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="添加部分重载内容">
-      <change afterPath="$PROJECT_DIR$/docs/网络协议/https如何保证安全.md" afterDir="false" />
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="add gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sidebar.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,8 @@
       <workItem from="1621750651231" duration="781000" />
       <workItem from="1621768705447" duration="6000" />
       <workItem from="1621860668678" duration="1060000" />
-      <workItem from="1621908682823" duration="2569000" />
+      <workItem from="1621908682823" duration="3832000" />
+      <workItem from="1622000061046" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -342,7 +341,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621861116665</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="添加https协议部分">
+      <created>1621926717621</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1621926717621</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add gitignore">
+      <created>1621926753904</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1621926753904</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +397,9 @@
     <MESSAGE value="添加springBoot的自动装配内容" />
     <MESSAGE value="添加consul-demo内容" />
     <MESSAGE value="添加部分重载内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加部分重载内容" />
+    <MESSAGE value="添加https协议部分" />
+    <MESSAGE value="add gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
