@@ -42,8 +42,9 @@
   * [概念入门](/SpringStateMachine/SpringStateMachine概念入门)
 * **Redis**
     * [Redis持久化](/Redis/Redis持久化)
-    * [Redis的键过期管理](/Redis/Redis的键过期管理)
+    * [Redis的键过期管理+内存淘汰](/Redis/Redis的键过期管理)
     * [Redis复制功能](/Redis/Redis复制功能)
+    * [Redis的数据结构](/Redis/Redis中的数据结构)
 * **并发编程**
     * [慢定时任务的多线程优化](/并发编程/慢定时任务的多线程优化)
     * [AQS原理简析](/并发编程/AQS原理)
