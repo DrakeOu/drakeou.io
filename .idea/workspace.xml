@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="add gitignore">
+    <list default="true" id="04d74490-3c08-4279-bc16-81d18ec5c7bc" name="Default Changelist" comment="add mvcc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +116,12 @@
       <workItem from="1621860668678" duration="1060000" />
       <workItem from="1621908682823" duration="3832000" />
       <workItem from="1622000061046" duration="11000" />
+      <workItem from="1622042547605" duration="207000" />
+      <workItem from="1622042791136" duration="11000" />
+      <workItem from="1622088578887" duration="768000" />
+      <workItem from="1622174906332" duration="837000" />
+      <workItem from="1622287792310" duration="767000" />
+      <workItem from="1622376674654" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1613360118634</created>
@@ -355,7 +361,42 @@
       <option name="project" value="LOCAL" />
       <updated>1621926753904</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add some tcp">
+      <created>1622042713952</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1622042713952</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add tcp">
+      <created>1622088630779</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1622088630779</updated>
+    </task>
+    <task id="LOCAL-00037" summary="add distribute lock">
+      <created>1622129842405</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1622129842405</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add distribute lock">
+      <created>1622175125497</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1622175125497</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add mvcc">
+      <created>1622287947231</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1622287947231</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,10 +415,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value="prepare switch to hexo" />
-    <MESSAGE value="add ignore" />
-    <MESSAGE value="ZAB proxy and leader election" />
     <MESSAGE value="add sidebar" />
     <MESSAGE value="添加多线程优化定时任务" />
     <MESSAGE value="添加Leader选举部分" />
@@ -399,7 +436,11 @@
     <MESSAGE value="添加部分重载内容" />
     <MESSAGE value="添加https协议部分" />
     <MESSAGE value="add gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
+    <MESSAGE value="add some tcp" />
+    <MESSAGE value="add tcp" />
+    <MESSAGE value="add distribute lock" />
+    <MESSAGE value="add mvcc" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mvcc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="-751" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614235919677">
